@@ -1,8 +1,14 @@
 from RobotArm import RobotArm
-
-robotArm = RobotArm('exercise ')
-
-# Jouw python instructies zet je vanaf hier:
-
-# Na jouw code wachten tot het sluiten van de window:
+robotArm = RobotArm()
+robotArm.randomLevel(1,7)
+for i in range (0,7):
+    robotArm.grab()
+    color = robotArm.scan()
+    if color == '':
+        break
+    for i  in range (0,i+1):
+        robotArm.moveRight()
+    robotArm.drop()
+    for i  in range (0,i+1):
+        robotArm.moveLeft()
 robotArm.wait()
